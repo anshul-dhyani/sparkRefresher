@@ -1,0 +1,8 @@
+id;name;dob;salary;designation;managerid;address;hobbies
+1;Sachin;10/01/75;10000;Manager;2;{"city" : "Bangalore", "state" : "Karnataka"};"cricket","netflix","walking"
+1;Sachin;10/01/75;10000;Volunteer;2;{"city" : "Bangalore", "state" : "Karnataka"};"cricket","netflix","walking"
+2;Dolly;11/02/76;20000;Director;3;{"city" : "Bangalore", "state" : "Karnataka"};“walking”,“jogging”
+3;Rajesh;12/03/77;30000;VP;4;{"city" : "Chennai", "state" : "TN"};“walking”,“cricket”
+4;Kishore;14/04/78;40000;SVP;5;{"city" : "Pune", "state" : "MH"};“walking”,"football”
+5;Naveen;15/05/79;50000;CEO;6;{"city" : "Delhi", "state" : "Delhi"};“music”,“netflix”
+6;Babu;16/06/80;60000;Chairman;0;{"city" : "Jaipur", "state" : "RJ"};running

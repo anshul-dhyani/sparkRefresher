@@ -1,0 +1,8 @@
+2.1 Create a RDD of integers from 1 to 100 using Scala or Python and show 10 records from this rdd.
+2.2 Create a dataframe from RDD of assignment 2.1 and then
+        a) printSchema of the dataframe
+        b) show  10 lines of this dataframe
+2.3 For RDD created in assignment 2.1,
+        a) apply ‘map’ transformation over this RDD to square each number and save it to a file.
+        b) apply filter on RDD created in step a) above,  to get RDD having  values greater than 1000
+2.4 Convert RDD of assignment 2.1 to a Dataframe and save it as parquet file

@@ -1,0 +1,1 @@
+case class EmployeeWithHobbies(id: String, name: String, dob: String, salary: String, designation: String, managerid: String, address: String, hobbies: String)

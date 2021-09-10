@@ -1,0 +1,79 @@
+Data ->
+    data5_1.csv ->
+        Name,Age,Salary,city
+        a,20,20000,Bangalore
+        b,30,30000,Bangalore
+        c,40.40000,Chennai
+        d,50,50000,Chennai
+        e,60,60000,Chennai
+        f,35,35000,Pune
+
+    data5_2.csv ->
+        id;name;dob;salary;designation;managerid;address;hobbies
+        1;Sachin;10/01/75;10000;Manager;2;{"city" : "Bangalore", "state" : "Karnataka"};"cricket","netflix","walking"
+        1;Sachin;10/01/75;10000;Volunteer;2;{"city" : "Bangalore", "state" : "Karnataka"};"cricket","netflix","walking"
+        2;Dolly;11/02/76;20000;Director;3;{"city" : "Bangalore", "state" : "Karnataka"};“walking”,“jogging”
+        3;Rajesh;12/03/77;30000;VP;4;{"city" : "Chennai", "state" : "TN"};“walking”,“cricket”
+        4;Kishore;14/04/78;40000;SVP;5;{"city" : "Pune", "state" : "MH"};“walking”,"football”
+        5;Naveen;15/05/79;50000;CEO;6;{"city" : "Delhi", "state" : "Delhi"};“music”,“netflix”
+        6;Babu;16/06/80;60000;Chairman;0;{"city" : "Jaipur", "state" : "RJ"};
+        7;Ramesh;19/09/85;60000;Developer;1;{"city" : "Shimla", "state" : "HP"};running
+
+    data5_3.csv ->
+        id;name;dob;salary;designation;managerid;address;hobbies
+        1;Sachin;10/01/75;10000;Manager;2;{"city" : "Bangalore", "state" : "Karnataka"};"cricket","netflix","walking"
+        1;Sachin;10/01/75;10000;Volunteer;2;{"city" : "Bangalore", "state" : "Karnataka"};"cricket","netflix","walking"
+        2;Dolly;11/02/76;20000;Director;3;{"city" : "Bangalore", "state" : "Karnataka"};“walking”,“jogging”
+        3;Rajesh;12/03/77;30000;VP;4;{"city" : "Chennai", "state" : "TN"};“walking”,“cricket”
+        4;Kishore;14/04/78;40000;SVP;5;{"city" : "Pune", "state" : "MH"};“walking”,"football”
+        5;Naveen;15/05/79;50000;CEO;6;{"city" : "Delhi", "state" : "Delhi"};“music”,“netflix”
+        6;Babu;16/06/80;60000;Chairman;0;{"city" : "Jaipur", "state" : "RJ"};
+
+
+
+5.1
+    a) Partition below data in RDD based upon city, have total 2 partitions and
+    b) print data inside each partition
+    c) load below data into a Dataframe and use Dataset repartition method to have 2 partitions based upon the city
+
+5.2
+    a) Load below data in RDD.
+        Create a range partitioner and use that to partition in ranges of salary ≤ 30000 and > 30000.
+        Print the contents of the partitions
+    b) Load below data in Dataset or Dataframe and use Dataset's repartitionByRange to have 3 partitions by city
+        (you can use from_json from org.apache.spark.sql.functions package).
+        Reference - https://sparkbyexamples.com/spark/spark-from_json-convert-json-column-to-struct-map-or-multiple-columns/
+
+5.3
+    a) Use mapPartitionsWithIndex to process below records by adding new column called ‘tax’ whose value is 10% of salary
+    b) print index of each partition inside mapPartitionsWithIndex implementation
+
+5.4 Use data5_3.csv
+    a) Load below data into Dataset[aCaseClassYouCanCreate] using implicits
+    b) Load below data into Dataset[aCaseClassYouCanCreate] without using implicits but using Encoders
+
+5.5 Create Double RDDs for each year (the value in RDD will be sale for each type of Vehicle
+    eg RDD1 consists of 3465045, 786692, 934104, 18830227, 24016599) and get stats for each RDD.
+
+    Category	            2015-16	        2016-17	        2017-18	        2018-19	        2019-20	        2020-21
+    Passenger Vehicles	    3,465,045	    3,801,670	    4,020,267	    4,028,471	    3,424,564	    3,062,221
+    Commercial Vehicles	    786,692	        810,253	        895,448	        1,112,405	    756,725	        624,939
+    Three Wheelers	        934,104	        783,721	        1022,181	    1,268,833	    1,132,982	    611,171
+    Two Wheelers	        18,830,227	    19,933,739	    23,154,838	    24,499,777	    21,032,927	    18,349,941
+    Quadricycle	            531	            1,584	        1,713	        5,388	        6,095	        3,836
+    Grand Total	            24,016,599	    25,330,967	    29,094,447	    30,914,874	    26,353,293	    22,652,108
+
+
+5.6
+    a) Broacast this data . It indicates salary as key and income tax rate as value
+        key,value
+        10000,10
+        20000,20
+        30000,30
+
+        eg person with salary 10k-20k  or less pays 10% of tax,
+        eg person with salary 20k-30k or less pays 20% of tax,
+        eg person with salary >30k pays 30% of tax
+
+    b) Use below data (data5_3.csv) to calculate tax and add tax as new column.
+       Get tax rates from the broadcast variable above.

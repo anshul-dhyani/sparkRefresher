@@ -1,0 +1,2 @@
+//case class Employee(id: Int, name: String, dob: String, salary: Long, designation: String, managerid: Int, address: Address, hobbies: List[String])
+case class Employee(id: Int, name: String, dob: String, salary: Long, designation: String, managerid: Int, address: String, hobbies: String)

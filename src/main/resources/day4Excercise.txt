@@ -1,0 +1,20 @@
+Data ->
+Name,Age,Salary,city
+a,20,20000,Bangalore
+b,30,30000,Bangalore
+c,40.40000,Chennai
+d,50,50000,Chennai
+e,60,60000,Chennai
+f,35,35000,Pune
+
+4.1
+    a) Create a RDD or DF out of integers from 1 to 1000 and have these in 3 partitions.  Print the number of partitions
+    b)
+        1) Create a DF out of below records (pass schema too)
+        2) Use groupBy to get sum of salaries citywise and print in a console or save in paraquet file
+        3) Print the plan of the dataframe or RDD, preferably use DF. Check for line indicating shuffle. Note - ‘exchange’ in plan indicates shuffle.
+        4) Check the number of stages for this on Spark UI.
+
+4.2
+    a) For data in 4.1, repartition the DF based upon the city
+    b) Use mapPartitions function to get salary citywise and print on console
